@@ -40,3 +40,17 @@ python create-indexer.py
 ```
 
 > インデクサーの作成に関して、同期処理しているため、表示までに時間がかかる可能性があります。
+
+## 留意事項 (エラー対応)
+- Tenant does not have a SPO license.
+  - TenantID の組織で Office365 Business の契約が必要です。そのため、Visual Studio Subscription などのでは SharePoint のインデクサーは作成不可です。
+
+- Invalid hostname for this tenancy
+  - Entra ID アプリを登録した同じテナントでの SharePoint エンドポイントを指定しないと上記エラーが発生します。
+
+## 参考文献
+- 「SharePoint ドキュメント ライブラリにあるデータのインデックスを作成する」
+https://learn.microsoft.com/ja-jp/azure/search/search-howto-index-sharepoint-online
+
+- 「Azure AI Search のスキルセットで PDF ファイルを読み込んでチャンク分割してベクトル化する」
+https://qiita.com/mahiya/items/1d9aaab3c242fd31bc8b
